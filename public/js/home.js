@@ -34,12 +34,16 @@ $(document).ready(function(){
         var products = category.products;
         for (var j = 0; j < products.length; j++) {
             product = products[j];
-            if (product.img != "https://images-na.ssl-images-amazon.com/images/G/01/acs/ux/transparent.png") {
+            if (product.img != "https://images-na.ssl-images-amazon.com/images/G/01/acs/ux/transparent.png" && product.price) {
+                price = product.price;
+                newPrice = parseFloat(price.replace('$',''));
+                newPrice = parseFloat(newPrice * 1.1).toFixed(2) + ' $'
                 productTmp = $('#clone-product').clone();
                 $(productTmp).find('.product-name').text(product.name);
-                $(productTmp).find('.price').text(product.price);
+                $(productTmp).find('.price').text(newPrice);
                 $(productTmp).find('.product-img').attr('src', product.img);
-                $(productTmp).find('.add-cart').attr('href', "detail?link=" + product.link);
+                $(productTmp).find('.zoom').attr('href', product.img);
+                $(productTmp).find('.add-cart').attr('href', "detail?price="+ newPrice +"&link=" + product.link);
                 $('#hn-products'+i).append(productTmp);
                 $(productTmp).show();
             }
