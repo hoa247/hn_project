@@ -38,9 +38,6 @@
         "classmap": [
             "database/seeds",
             "database/factories"
-        ],
-        "files": [
-            "app/Libraries/lazada/LazopSdk.php",
         ]
     },
     "autoload-dev": {
