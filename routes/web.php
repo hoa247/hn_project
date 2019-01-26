@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/', 'ProductController@readHTMLDashboard');
+Route::get('/', 'ProductController@category');
+Route::get('detail', 'ProductController@detail');
