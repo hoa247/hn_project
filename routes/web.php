@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/', 'ProductController@readHTMLDashboard');
+Route::get('/', 'ProductController@readHTMLDashboard')->name('home');
+Route::get('/events', 'ProductController@events')->name('events');

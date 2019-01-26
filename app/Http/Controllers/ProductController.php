@@ -36,4 +36,9 @@ class ProductController extends Controller
         // $html = $dom->saveHTML();
         return view('dashboard', compact('response'));
     }
+
+    public function events()
+    {
+        return view('events');
+    }
 }
