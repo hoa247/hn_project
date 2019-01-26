@@ -40,4 +40,9 @@ class ProductController extends Controller
         curl_close($ch);
         return $response;
     }
+
+    public function events()
+    {
+        return view('events');
+    }
 }
